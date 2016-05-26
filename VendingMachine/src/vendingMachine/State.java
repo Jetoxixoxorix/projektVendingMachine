@@ -1,8 +1,9 @@
 package vendingMachine;
 
+
 public interface State {
 
-	
-	//ulalalassadaasasassaas
-	//kolejny koment :P
+	public void insertMoney();
+	public void pickProduct();
+	public void dispense();
 }
