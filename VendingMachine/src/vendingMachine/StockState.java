@@ -1,6 +1,6 @@
 package vendingMachine;
 
-public class StockState {
+public class StockState implements State{
 	int State state;
 	
 	
