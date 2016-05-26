@@ -5,5 +5,7 @@ public interface State {
 
 	public void insertMoney();
 	public void pickProduct();
-	public void dispense();
+	public void dsispense();
+	
+	public void dupa();
 }
