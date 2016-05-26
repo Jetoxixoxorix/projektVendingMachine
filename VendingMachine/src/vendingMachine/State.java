@@ -1,5 +1,5 @@
 package vendingMachine;
 
-public class State {
+public interface State {
 
 }
