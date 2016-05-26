@@ -1,7 +1,7 @@
 package vendingMachine;
 
 public class StockState {
-	int state;
+	int State state;
 	
 	
 	public  getState(){
