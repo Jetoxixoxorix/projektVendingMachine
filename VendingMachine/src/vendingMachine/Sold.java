@@ -28,4 +28,10 @@ public class Sold implements State {
 		vendingMachine.setState(vendingMachine.getNoMoneyState());
 	} 
 	}
+
+	@Override
+	public void ejectMoney() {
+		// TODO Auto-generated method stub
+		
+	}
 }

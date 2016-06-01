@@ -9,7 +9,7 @@ public class HasMoney implements State {
 	}
 	@Override
 	public void insertMoney() {
-		System.out.print("You can't insert more money now");
+		//zwiêksza siê iloœæ kasy o tyle
 	}
 
 	@Override
@@ -26,6 +26,11 @@ public class HasMoney implements State {
 	@Override
 	public void dispense() {
 		System.out.print("You have to pick your product first");
+	}
+	@Override
+	public void ejectMoney() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -67,14 +67,14 @@ public class VendingMachine{
 	final String COLA = "1";
 	
 	int zapasCola = 20;
-	int zapasBaton = 20;
+	int zapasBaton = 0;
 	int zapasGuma = 20;
 	
 	int count = 0;
 	State state = noMoney;
 	
 	public VendingMachine() {
-		noMoney = new NoMoney(this);
+
 		hasMoney = new HasMoney(this);
 		sold = new Sold(this);
 	}
@@ -94,7 +94,7 @@ public class VendingMachine{
 	void releaseProduct() {
 		System.out.print("Take your product from the slot");
 		if (product == 1) {
-			cola = new Product(20);
+			cola = new Product(zapasCola);
 			if (zapasCola > 0) {
 				zapasCola = zapasCola - 1;
 				setState(getNoMoneyState());
@@ -105,7 +105,7 @@ public class VendingMachine{
 			}
 		}
 		if (product == 2) {
-			baton = new Product(20);
+			baton = new Product(zapasBaton);
 			if (zapasBaton > 0) {
 				zapasBaton = zapasBaton - 1;
 				setState(getNoMoneyState());
@@ -116,7 +116,7 @@ public class VendingMachine{
 			}
 		}
 		if (product == 3) {
-			guma = new Product(20);
+			guma = new Product(zapasGuma);
 			if (zapasGuma > 0) {
 				zapasGuma = zapasGuma - 1;
 				setState(getNoMoneyState());
@@ -156,7 +156,7 @@ public class VendingMachine{
 	}
 	
 	//GUMA
-	public void setZapasGuma(int zapasGumaa) {
+	public void setZapasGuma(int zapasGuma) {
 		this.zapasGuma = zapasGuma;
 	}
 	public int getZapasGuma(){

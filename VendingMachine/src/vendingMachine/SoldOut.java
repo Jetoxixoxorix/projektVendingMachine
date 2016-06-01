@@ -1,18 +1,21 @@
 package vendingMachine;
 
-public class NoMoney implements State {
-	VendingMachine vendingMachine;
-	
-	public NoMoney(VendingMachine vendingMachine) {
-		this.vendingMachine = vendingMachine;
-	}
+public class SoldOut implements State {
+
 	@Override
 	public void insertMoney() {
-		System.out.print("You need to insert money to buy your product");
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void pickProduct() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ejectMoney() {
 		// TODO Auto-generated method stub
 		
 	}
