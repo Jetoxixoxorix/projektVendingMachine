@@ -8,12 +8,11 @@ public class App {
 	        Scanner scanner = new Scanner(System.in);
 
 	        System.out.print("Witaj, wrzurz hajs a nastepnie wybierz produkt:\n");
-	        double hajs = scanner.nextDouble();
-
-	        if (hajs > 0) {
-	        	System.out.println("Wrzucona kwota:\t" + hajs);
-	        	VendingMachine vendingMachine = new VendingMachine();
-		
+	        
+	        VendingMachine vendingMachine = new VendingMachine(12);
+	        
+	        	System.out.println("Wrzucona kwota:\t" + vendingMachine.getMoney());
+	        	
 //	        	System.out.println(vendingMachine.getCount());
 //	        	vendingMachine.insertMoney();
 //	        	vendingMachine.pickProduct();
@@ -56,10 +55,8 @@ public class App {
 	        		//jesli jest to robimy dispense a potem aktualizujemy o 1 zapas	
 	        	}
 		
-	        } else {
-	        	System.out.println("Nic nie wrzuciles");
-	        }
+	        } 
 	        
 	}
 
-}
+

@@ -25,7 +25,7 @@ public class Sold implements State {
 	public void dispense() {
 		vendingMachine.releaseProduct();
 	if (vendingMachine.getCount() > 0) {
-		vendingMachine.setState(vendingMachine.getNoMoneyState());
+		vendingMachine.setState(vendingMachine.getHasMoneyState());
 	} 
 	}
 

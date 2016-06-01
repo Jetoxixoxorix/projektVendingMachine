@@ -53,7 +53,6 @@ public class VendingMachine {
 // moje zmiany
 public class VendingMachine{
 
-	State noMoney;
 	State hasMoney;
 	State noProduct;
 	State hasProduct;
@@ -63,6 +62,7 @@ public class VendingMachine{
 	Product guma;
 	
 	int product;
+	double money;
 	
 	final String COLA = "1";
 	
@@ -71,12 +71,13 @@ public class VendingMachine{
 	int zapasGuma = 20;
 	
 	int count = 0;
-	State state = noMoney;
+	State state = hasMoney;
 	
-	public VendingMachine() {
+	public VendingMachine(double money) {
 
 		hasMoney = new HasMoney(this);
 		sold = new Sold(this);
+		this.money = money;
 	}
 	
 	public void insertMoney() {
@@ -97,7 +98,7 @@ public class VendingMachine{
 			cola = new Product(zapasCola);
 			if (zapasCola > 0) {
 				zapasCola = zapasCola - 1;
-				setState(getNoMoneyState());
+				setState(getHasMoneyState());
 			}
 			else {
 				System.out.print("Out of stock. Pick other product");
@@ -108,7 +109,7 @@ public class VendingMachine{
 			baton = new Product(zapasBaton);
 			if (zapasBaton > 0) {
 				zapasBaton = zapasBaton - 1;
-				setState(getNoMoneyState());
+				setState(getHasMoneyState());
 			}
 			else {
 				System.out.print("Out of stock. Pick other product");
@@ -119,7 +120,7 @@ public class VendingMachine{
 			guma = new Product(zapasGuma);
 			if (zapasGuma > 0) {
 				zapasGuma = zapasGuma - 1;
-				setState(getNoMoneyState());
+				setState(getHasMoneyState());
 			}
 			else {
 				System.out.print("Out of stock. Pick other product");
@@ -138,6 +139,14 @@ public class VendingMachine{
 	}
 	public int getCount(){
 		return count;
+	}
+	
+	public void setMoney(double money){
+		this.money = money;
+	}
+	
+	public double getMoney(){
+		return money;
 	}
 	//COLA
 	public void setZapasCola(int zapasCola) {
@@ -164,9 +173,7 @@ public class VendingMachine{
 	}
 	
 	
-	public State getNoMoneyState() {
-		return noMoney; 
-	}
+	
 	public State getHasMoneyState() {
 		return hasMoney; 
 	}

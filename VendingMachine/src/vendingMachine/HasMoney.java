@@ -4,12 +4,13 @@ package vendingMachine;
 public class HasMoney implements State {
 	VendingMachine vendingMachine;
 	
+	
 	public HasMoney(VendingMachine vendingMachine) {
 		this.vendingMachine = vendingMachine;
 	}
 	@Override
 	public void insertMoney() {
-		//zwiêksza siê iloœæ kasy o tyle
+		
 	}
 
 	@Override
