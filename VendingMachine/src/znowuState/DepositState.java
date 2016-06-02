@@ -17,20 +17,19 @@ public class DepositState implements State {
 
 	@Override
 	public void ejectMoney() {
-		// TODO Auto-generated method stub
+		System.out.println("You ejected your money from depositstate");
 		
 	}
 
 	@Override
 	public void pickProduct() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("pick your product from depositstate");	
+		vendingMachine.setState(vendingMachine.getStockState());
 	}
 
 	@Override
 	public void dispense() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("dispense from depositstate");		
 	}
 
 	

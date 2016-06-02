@@ -8,7 +8,17 @@ public class Test {
 		VendingMachine vendingMachine = new VendingMachine();
 	        
      	vendingMachine.insertMoney();
-     	vendingMachine.insertMoney();
+     	vendingMachine.pickProduct();
+     	vendingMachine.pickProduct();
+     	vendingMachine.pickProduct();
+     	vendingMachine.pickProduct();
+     	vendingMachine.pickProduct();
+     	vendingMachine.pickProduct();
+     	vendingMachine.pickProduct();
+     	vendingMachine.pickProduct();
+     	vendingMachine.pickProduct();
+     	vendingMachine.pickProduct();
+     	vendingMachine.pickProduct();
 	}
 
 }

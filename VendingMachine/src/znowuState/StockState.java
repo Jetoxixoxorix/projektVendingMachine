@@ -47,13 +47,31 @@ public class StockState implements State {
 
 	@Override
 	public void ejectMoney() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("You ejected your money from stockstate");		
 	}
+	
 
+	Product product = new Product();
+	double cash = 20.50;
+	
 	@Override
 	public void pickProduct() {
-		// TODO Auto-generated method stub
+		if (cash >= product.getPrice()) {
+			if (product.getQuantity() > 0) {
+				product.setQuantity(product.getQuantity() - 1);
+				cash = cash - product.getPrice();
+				System.out.println("Stock: " + product.getQuantity());
+				System.out.println("Current balance: " + cash);
+				vendingMachine.setState(vendingMachine.getDepositState());
+			} else {
+				System.out.println("out of stock. pick other product");
+			}
+			
+		} else {
+			System.out.println("Not enough money. Pick other product");
+			vendingMachine.setState(vendingMachine.getDepositState());
+		}
+
 		
 	}
 
