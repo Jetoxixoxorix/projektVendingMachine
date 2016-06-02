@@ -10,6 +10,7 @@ public class App {
 	        System.out.print("Witaj, wrzurz hajs a nastepnie wybierz produkt:\n");
 	        
 	        VendingMachine vendingMachine = new VendingMachine(12);
+	        vendingMachine.insertMoney();
 	        
 	        	System.out.println("Wrzucona kwota:\t" + vendingMachine.getMoney());
 	        	
