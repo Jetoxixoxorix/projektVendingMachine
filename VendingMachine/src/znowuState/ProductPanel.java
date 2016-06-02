@@ -1,14 +1,11 @@
 package znowuState;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class ProductPanel extends JPanel implements ActionListener {
 	
@@ -19,10 +16,10 @@ public class ProductPanel extends JPanel implements ActionListener {
 	
 	
 	public ProductPanel() {
-		colaButton = new JButton("Cola");
-		batonButton = new JButton("Baton");
-		gumaButton = new JButton("Guma");
-		
+		colaButton = new JButton("Cola - 1.50");
+		batonButton = new JButton("Baton - 2");
+		gumaButton = new JButton("Guma - 0.50");
+
 		
 		colaButton.addActionListener(this);
 		batonButton.addActionListener(this);

@@ -1,5 +1,6 @@
 package znowuState;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
 
@@ -9,7 +10,9 @@ public class VendingMachine {
 	
 	private MoneyPanel moneyPanel;
 	private ProductPanel productPanel;
-	
+	private QuantityPanel quantityPanel;
+	public static final int HEIGHT = 800;
+	public static final int WIDTH = 400;
 	State stockState;
 	State depositState;
 	int count = 0;
@@ -21,17 +24,18 @@ public class VendingMachine {
 	public VendingMachine(double cash) {
 		JFrame frame = new JFrame(this.getClass().toString());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		LayoutManager lay = new GridLayout(2, 0);
+		LayoutManager lay = new GridLayout(3, 0);
 		frame.setLayout(lay);
+		frame.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 
 		moneyPanel = new MoneyPanel();
 		productPanel = new ProductPanel();
+		quantityPanel = new QuantityPanel();
 		
 		frame.add(moneyPanel);
 		frame.add(productPanel);
+		frame.add(quantityPanel);
 		
-
-		//moneyPanel.setFocusable(true);
 		frame.pack();
 		frame.setVisible(true);
 	
