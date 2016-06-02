@@ -71,13 +71,14 @@ public class VendingMachine{
 	int zapasGuma = 20;
 	
 	int count = 0;
-	State state = hasMoney;
+	State state;
 	
 	public VendingMachine(double money) {
 
 		hasMoney = new HasMoney(this);
 		sold = new Sold(this);
 		this.money = money;
+		state = hasMoney;
 	}
 	
 	public void insertMoney() {

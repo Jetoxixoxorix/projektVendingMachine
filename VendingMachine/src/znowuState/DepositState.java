@@ -12,6 +12,7 @@ public class DepositState implements State {
 	@Override
 	public void insertMoney() {
 		System.out.println("Wrzuc hajs biedaku!");
+		vendingMachine.setState(vendingMachine.getStockState());
 	}
 
 	@Override

@@ -8,6 +8,7 @@ public class Test {
 		VendingMachine vendingMachine = new VendingMachine();
 	        
      	vendingMachine.insertMoney();
+     	vendingMachine.insertMoney();
 	}
 
 }

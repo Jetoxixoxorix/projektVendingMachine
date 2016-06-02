@@ -42,8 +42,7 @@ public class StockState implements State {
 	
 	@Override
 	public void insertMoney() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("co");
 	}
 
 	@Override
