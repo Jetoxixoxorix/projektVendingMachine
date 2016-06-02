@@ -19,8 +19,8 @@ public class VendingMachine {
 		state.insertMoney();
 	}
 	
-	public void pickProduct() {
-		state.pickProduct();
+	public void pickProduct(double cash) {
+		state.pickProduct(cash);
 		state.dispense();
 	}
 	

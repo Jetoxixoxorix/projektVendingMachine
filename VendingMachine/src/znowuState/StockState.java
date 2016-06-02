@@ -52,10 +52,10 @@ public class StockState implements State {
 	
 
 	Product product = new Product();
-	double cash = 20.50;
+	public double cash = Test.mamona;
 	
 	@Override
-	public void pickProduct() {
+	public void pickProduct(double cash) {
 		if (cash >= product.getPrice()) {
 			if (product.getQuantity() > 0) {
 				product.setQuantity(product.getQuantity() - 1);

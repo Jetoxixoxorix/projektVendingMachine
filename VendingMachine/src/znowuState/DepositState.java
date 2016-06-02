@@ -22,7 +22,7 @@ public class DepositState implements State {
 	}
 
 	@Override
-	public void pickProduct() {
+	public void pickProduct(double cash) {
 		System.out.println("pick your product from depositstate");	
 		vendingMachine.setState(vendingMachine.getStockState());
 	}
