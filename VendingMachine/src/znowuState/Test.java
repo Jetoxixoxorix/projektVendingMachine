@@ -31,6 +31,9 @@ public class Test {
     	vendingMachine.pickProduct();
     	vendingMachine.pickProduct();
     	vendingMachine.pickProduct();
+    	vendingMachine.ejectMoney();
+    	
+    	
     	vendingMachine.pickProduct();
     	vendingMachine.pickProduct();
     	vendingMachine.pickProduct();

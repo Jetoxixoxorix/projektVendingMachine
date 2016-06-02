@@ -7,7 +7,7 @@ public class StockState implements State {
 	VendingMachine vendingMachine;
 	
 	int zapasCola = 5;
-	int zapasBaton = 5;
+	int zapasBaton = 10;
 	int zapasGuma = 10;
 	
 	public StockState(VendingMachine vendingMachine) {

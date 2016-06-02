@@ -19,6 +19,8 @@ public class DepositState implements State {
 	@Override
 	public void ejectMoney() {
 		System.out.println("You ejected your money from depositstate");
+		Test.cash = 0;
+		vendingMachine.insertMoney();
 		
 	}
 
