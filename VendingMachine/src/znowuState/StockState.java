@@ -52,16 +52,16 @@ public class StockState implements State {
 	
 
 	Product product = new Product();
-	public double cash = Test.mamona;
+	
 	
 	@Override
-	public void pickProduct(double cash) {
-		if (cash >= product.getPrice()) {
+	public void pickProduct() {
+		if (Test.cash >= product.getPrice()) {
 			if (product.getQuantity() > 0) {
 				product.setQuantity(product.getQuantity() - 1);
-				cash = cash - product.getPrice();
+				Test.cash = Test.cash - product.getPrice();
 				System.out.println("Stock: " + product.getQuantity());
-				System.out.println("Current balance: " + cash);
+				System.out.println("Current balance: " + Test.cash);
 				vendingMachine.setState(vendingMachine.getDepositState());
 			} else {
 				System.out.println("out of stock. pick other product");
@@ -75,6 +75,7 @@ public class StockState implements State {
 		
 	}
 
+	// tutaj mozna w sumie to rozbic na dwie petle z if w pickproduct tylko z tym czy test cash>productprice a w dispense juz tak typowo na odjecie produktu z zapasu nie ???? 
 	@Override
 	public void dispense() {
 		// TODO Auto-generated method stub

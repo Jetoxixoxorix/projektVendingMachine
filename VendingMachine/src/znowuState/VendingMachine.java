@@ -6,8 +6,10 @@ public class VendingMachine {
 	State depositState;
 	int count = 0;
 	State state;
-
-	public VendingMachine() {
+	double cash;
+	
+	public VendingMachine(double cash) {
+		this.cash = cash;
 		stockState = new StockState(this);
 		depositState = new DepositState(this);
 		state = depositState;
@@ -19,8 +21,8 @@ public class VendingMachine {
 		state.insertMoney();
 	}
 	
-	public void pickProduct(double cash) {
-		state.pickProduct(cash);
+	public void pickProduct() {
+		state.pickProduct();
 		state.dispense();
 	}
 	

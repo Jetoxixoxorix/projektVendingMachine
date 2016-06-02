@@ -3,7 +3,7 @@ package znowuState;
 public class Product {
 
 	int quantity = 5;
-	double price = 2.55;
+	double price = 0.55;
 	
 	public Product() {
 		
