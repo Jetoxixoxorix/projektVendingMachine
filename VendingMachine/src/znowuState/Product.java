@@ -2,18 +2,18 @@ package znowuState;
 
 public class Product {
 
-	int quantity = 5;
-	double price = 0.55;
+	int quantity;
+	double price;
 	
-	public Product() {
-		
+	public Product(int quantity, double price) {
+		this.quantity = quantity;
+		this.price = price;
 	}
 	
 	public double getPrice() {
 		return price;
 	}
 
-	
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}

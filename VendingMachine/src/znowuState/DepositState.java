@@ -11,8 +11,9 @@ public class DepositState implements State {
 	
 	@Override
 	public void insertMoney() {
-		System.out.println("Wrzucona kwota: " + Test.cash);
+		System.out.println("Current balance: " + Test.cash);
 		vendingMachine.setState(vendingMachine.getStockState());
+		
 	}
 
 	@Override
@@ -23,13 +24,13 @@ public class DepositState implements State {
 
 	@Override
 	public void pickProduct() {
-		System.out.println("pick your product from depositstate");	
+		System.out.println("Pick your product");	
 		vendingMachine.setState(vendingMachine.getStockState());
 	}
 
 	@Override
 	public void dispense() {
-		System.out.println("You can take your product out of the slot");
+		System.out.println("You have to insert money first");
 		vendingMachine.insertMoney();
 	}
 

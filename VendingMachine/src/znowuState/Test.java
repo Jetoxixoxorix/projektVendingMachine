@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Test {
 	
 	public static double cash;
+	public static int towar;
 
 	public static void main(String[] args) {
 
@@ -20,6 +21,12 @@ public class Test {
 	    
 	    cash = startMoney;
      	vendingMachine.insertMoney();
+
+	    System.out.println("pick your product: 1 - cola, 2 - baton, 3 - guma");    
+
+        Scanner scanner2 = new Scanner(System.in);
+    	int firstProduct = scanner.nextInt();  
+    	towar = firstProduct;
     	
     	vendingMachine.pickProduct();
     	vendingMachine.pickProduct();
@@ -27,7 +34,16 @@ public class Test {
     	vendingMachine.pickProduct();
     	vendingMachine.pickProduct();
     	vendingMachine.pickProduct();
-    	System.out.println(cash);
+    	vendingMachine.pickProduct();
+    	vendingMachine.pickProduct();
+    	vendingMachine.pickProduct();
+    	vendingMachine.pickProduct();
+    	vendingMachine.pickProduct();
+    	vendingMachine.pickProduct();
+    	vendingMachine.pickProduct();
+    	vendingMachine.pickProduct();
+    
+    	
   
   
 	}
