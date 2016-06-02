@@ -19,9 +19,9 @@ public class VendingMachine {
 	double cash;
 	
 	
-	
-	public VendingMachine(double cash) {
-		JFrame frame = new JFrame(this.getClass().toString());
+	/*public VendingMachine(double cash) {*/
+	public VendingMachine() {
+		/*JFrame frame = new JFrame(this.getClass().toString());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		LayoutManager lay = new GridLayout(3, 0);
 		frame.setLayout(lay);
@@ -37,9 +37,9 @@ public class VendingMachine {
 		
 		frame.pack();
 		frame.setVisible(true);
-	
+	*/
 		
-		this.cash = cash;
+		/*this.cash = cash;*/
 		stockState = new StockState(this);
 		depositState = new DepositState(this);
 		state = depositState;
@@ -56,6 +56,10 @@ public class VendingMachine {
 	public void ejectMoney(){
 		state.ejectMoney();
 	}
+	/*public void dispense(){
+		state.dispense();
+	}*/
+	
 	
 	public void setState(State state) {
 		this.state = state; 
@@ -66,4 +70,5 @@ public class VendingMachine {
 	public State getDepositState() {
 		return depositState; 
 	}
+	
 }

@@ -1,12 +1,13 @@
 package znowuState;
 
-
+import java.util.Scanner;
 
 public class StockState implements State {
-
+	public int towar;
+	
 	VendingMachine vendingMachine;
 	
-	int zapasCola = 5;
+	int zapasCola = 10;
 	int zapasBaton = 10;
 	int zapasGuma = 10;
 	
@@ -40,12 +41,23 @@ public class StockState implements State {
 	
 	@Override
 	public void insertMoney() {
-		System.out.println("You can't insert more money now");
+		vendingMachine.setState(vendingMachine.depositState);
+		vendingMachine.insertMoney();
 	}
 
 	@Override
 	public void ejectMoney() {
-		System.out.println("You ejected your money from VendingMachine");		
+		if (DepositState.allCash == 0){
+			System.out.println("There is nothing to eject");
+		}
+		if (DepositState.allCash > 0){
+			DepositState.allCash = 0;
+			System.out.println("You ejected your money from VendingMachine");
+			System.out.println("Current balance: " + DepositState.allCash);
+			vendingMachine.setState(vendingMachine.depositState);
+		}
+		
+		
 	}
 	
 	Product product = new Product(0,0);
@@ -55,73 +67,86 @@ public class StockState implements State {
 	
 	@Override
 	public void pickProduct() {
-		if (Test.towar == 1) {
-			if (Test.cash >= cola.getPrice()) {
+	    System.out.println("pick your product: 1 - cola, 2 - baton, 3 - guma");    
+        Scanner scanner2 = new Scanner(System.in);
+    	int firstProduct = scanner2.nextInt();  
+    	towar = firstProduct;
+		if (towar == 1) {
+			if (DepositState.allCash >= cola.getPrice()) {
 				dispense();
 			} else {
 				System.out.println("Not enough money. Insert more money");
-				vendingMachine.setState(vendingMachine.getDepositState());
+				/*vendingMachine.setState(vendingMachine.getDepositState());*/
 				vendingMachine.insertMoney();
 			}
 		}
-		else if (Test.towar == 2) {
-			if (Test.cash >= baton.getPrice()) {
+		else if (towar == 2) {
+			if (DepositState.allCash >= baton.getPrice()) {
 				dispense();
 			} else {
 				System.out.println("Not enough money. Insert more money");
-				vendingMachine.setState(vendingMachine.getDepositState());
+				/*vendingMachine.setState(vendingMachine.getDepositState());*/
+				vendingMachine.insertMoney();
 			}
 		}
-		else if (Test.towar == 3) {
-			if (Test.cash >= guma.getPrice()) {
+		else if (towar == 3) {
+			if (DepositState.allCash >= guma.getPrice()) {
 				dispense();
 			} else {
 				System.out.println("Not enough money. Insert more money");
-				vendingMachine.setState(vendingMachine.getDepositState());
+				/*vendingMachine.setState(vendingMachine.getDepositState());*/
+				vendingMachine.insertMoney();
 			}
+		}
+		else {
+			System.out.println("There is no such item!");
+			vendingMachine.pickProduct();
 		}
 		
 	}
 
 	@Override
 	public void dispense() {
-		if (Test.towar == 1) {
+		if (towar == 1) {
 			if (cola.getQuantity() > 0) {
 					cola.setQuantity(cola.getQuantity() - 1);
-					Test.cash = Test.cash - cola.getPrice();
+					DepositState.allCash = DepositState.allCash - cola.getPrice();
 					System.out.println("Stock: " + cola.getQuantity());
-					System.out.println("Current balance: " + Test.cash);
-					vendingMachine.setState(vendingMachine.getDepositState());
+					System.out.println("Current balance: " + DepositState.allCash);
+					/*vendingMachine.setState(vendingMachine.getDepositState());*/
 				} else {
-					System.out.println("out of stock. Pick other product");
-					vendingMachine.setState(vendingMachine.getDepositState());
-					vendingMachine.insertMoney();
+					System.out.println("Out of stock. Pick other product");
+					vendingMachine.pickProduct();
+					/*vendingMachine.setState(vendingMachine.getDepositState());
+					vendingMachine.insertMoney();*/
 				}
 		}
-		else if (Test.towar == 2) {
+		else if (towar == 2) {
 			if (baton.getQuantity() > 0) {
 					baton.setQuantity(baton.getQuantity() - 1);
-					Test.cash = Test.cash - baton.getPrice();
+					DepositState.allCash = DepositState.allCash - baton.getPrice();
 					System.out.println("Stock: " + baton.getQuantity());
-					System.out.println("Current balance: " + Test.cash);
+					System.out.println("Current balance: " + DepositState.allCash);
 					vendingMachine.setState(vendingMachine.getDepositState());
 				} else {
-					System.out.println("out of stock. Pick other product");
-					vendingMachine.setState(vendingMachine.getDepositState());
-					vendingMachine.insertMoney();
+					System.out.println("Out of stock. Pick other product");
+					vendingMachine.pickProduct();
+					/*vendingMachine.setState(vendingMachine.getDepositState());
+					vendingMachine.insertMoney();*/
 				}
 		}
-		if (Test.towar == 3) {
+		if (towar == 3) {
 			if (guma.getQuantity() > 0) {
 					guma.setQuantity(guma.getQuantity() - 1);
-					Test.cash = Test.cash - guma.getPrice();
+					DepositState.allCash = DepositState.allCash - guma.getPrice();
 					System.out.println("Stock: " + guma.getQuantity());
-					System.out.println("Current balance: " + Test.cash);
+					System.out.println("Current balance: " + DepositState.allCash);
 					vendingMachine.setState(vendingMachine.getDepositState());
 				} else {
-					System.out.println("out of stock. Pick other product");
-					vendingMachine.setState(vendingMachine.getDepositState());
-					vendingMachine.insertMoney();
+					System.out.println("Out of stock. Pick other product");
+					vendingMachine.pickProduct();
+					/*vendingMachine.setState(vendingMachine.getDepositState());
+					vendingMachine.insertMoney();*/
 				}
 		}
 		

@@ -1,5 +1,6 @@
 package znowuState;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,37 +10,45 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class MoneyPanel extends JPanel implements ActionListener {
-	private JTextField moneyField;
+	private static JTextField moneyField;
 	private JButton acceptButton;
 	private JLabel moneyMoneyMoney;
 	private JButton ejectButton;
+	String kox = "0";
 	
 	public MoneyPanel(){
-		moneyField = new JTextField("Money");
+		moneyField = new JTextField("     ");
 		acceptButton = new JButton("Accept");
-		moneyMoneyMoney = new JLabel("Money: ");
+		moneyMoneyMoney = new JLabel("Money: " + kox);
 		ejectButton = new JButton("Eject");
 	
 		acceptButton.addActionListener(this);
-		moneyField.setSize(100, 100);
+	
 		add(moneyField);
 		add(acceptButton);
 		add(moneyMoneyMoney);
 		add(ejectButton);
 	}
-	public String getMoney(){
+	public static String getMoney(){
 		return moneyField.getText();
 	}
+	
+	/*public static String moneyHaschanged(){
+		
+	}*/
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-	/*	Object source = e.getSource();
+	Object source = e.getSource();
 		if (source==acceptButton){
-			ProductPanel.getMoney();
+			kox = MoneyPanel.getMoney();
+			System.out.println(kox);
 		}
 		else if (source==ejectButton){
 		
 		}
-		*/
+		
 	}
 	
 	
