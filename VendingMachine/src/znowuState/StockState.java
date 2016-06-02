@@ -1,0 +1,102 @@
+package znowuState;
+
+
+
+public class StockState implements State {
+
+	VendingMachine vendingMachine;
+	
+	int zapasCola = 20;
+	int zapasBaton = 0;
+	int zapasGuma = 20;
+	
+	public StockState(VendingMachine vendingMachine) {
+		this.vendingMachine = vendingMachine;
+	}
+	
+	//COLA
+	public void setZapasCola(int zapasCola) {
+		this.zapasCola = zapasCola;
+	}
+	public int getZapasCola(){
+		return zapasCola;
+	}
+	
+	//BATON
+	public void setZapasBaton(int zapasBaton) {
+		this.zapasBaton = zapasBaton;
+	}
+	public int getZapasBaton(){
+		return zapasBaton;
+	}
+	
+	//GUMA
+	public void setZapasGuma(int zapasGuma) {
+		this.zapasGuma = zapasGuma;
+	}
+	public int getZapasGuma(){
+		return zapasGuma;
+	}
+	
+	
+	
+	@Override
+	public void insertMoney() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ejectMoney() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pickProduct() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dispense() {
+		// TODO Auto-generated method stub
+		
+	}
+/*	void releaseProduct() {
+		System.out.print("Take your product from the slot");
+		if (product == 1) {
+			//cola = new Product(zapasCola);
+			if (zapasCola > 0) {
+				zapasCola = zapasCola - 1;
+				setState(getHasMoneyState());
+			}
+			else {
+				System.out.print("Out of stock. Pick other product");
+				setState(getHasMoneyState());
+			}
+		}
+		if (product == 2) {
+			baton = new Product(zapasBaton);
+			if (zapasBaton > 0) {
+				zapasBaton = zapasBaton - 1;
+				setState(getHasMoneyState());
+			}
+			else {
+				System.out.print("Out of stock. Pick other product");
+				setState(getHasMoneyState());
+			}
+		}
+		if (product == 3) {
+			guma = new Product(zapasGuma);
+			if (zapasGuma > 0) {
+				zapasGuma = zapasGuma - 1;
+				setState(getHasMoneyState());
+			}
+			else {
+				System.out.print("Out of stock. Pick other product");
+				setState(getHasMoneyState());
+			}
+		}*/
+
+}
