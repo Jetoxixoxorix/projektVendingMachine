@@ -8,7 +8,7 @@ public class TestPanel {
 
 				@Override
 				public void run() {
-					new Frame();
+					new VendingMachine(12);
 				}
 			});
 		}
