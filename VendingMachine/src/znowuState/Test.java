@@ -9,12 +9,12 @@ public class Test {
 		String command;
 	    System.out.println("Insert money and pick your product!");    
         Scanner scanner = new Scanner(System.in);
-    	int count = 0;
+    	boolean con = true;
         VendingMachine vendingMachine = new VendingMachine();
-        
+        int count = 0;
    
-        finish:
-        while(count >= 0){
+  
+        while(con){
         	System.out.println("What you are gonna do? (i - insert money, p - pick product, e - eject money, q - quit)");
         	command = scanner.nextLine();
         	switch (command.charAt(0)){
@@ -28,10 +28,9 @@ public class Test {
 	        		vendingMachine.ejectMoney();
 	        		break;
 	        	case 'q':
-	        		break finish;
+	        		con = false;
+	        		break;
         	}
-        	count++;
-        }
 	}
-	
+	}
 }
