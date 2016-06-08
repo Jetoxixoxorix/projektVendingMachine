@@ -127,7 +127,7 @@ public class StockState implements State {
 					DepositState.allCash = DepositState.allCash - baton.getPrice();
 					System.out.println("Stock: " + baton.getQuantity());
 					System.out.println("Current balance: " + DepositState.allCash);
-					vendingMachine.setState(vendingMachine.getDepositState());
+					//vendingMachine.setState(vendingMachine.getDepositState());
 				} else {
 					System.out.println("Out of stock. Pick other product");
 					vendingMachine.pickProduct();
@@ -141,7 +141,7 @@ public class StockState implements State {
 					DepositState.allCash = DepositState.allCash - guma.getPrice();
 					System.out.println("Stock: " + guma.getQuantity());
 					System.out.println("Current balance: " + DepositState.allCash);
-					vendingMachine.setState(vendingMachine.getDepositState());
+					//vendingMachine.setState(vendingMachine.getDepositState());
 				} else {
 					System.out.println("Out of stock. Pick other product");
 					vendingMachine.pickProduct();
