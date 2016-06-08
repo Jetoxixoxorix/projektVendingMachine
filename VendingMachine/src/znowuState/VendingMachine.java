@@ -16,10 +16,8 @@ public class VendingMachine {
 	double cash;
 	
 	
-	/*public VendingMachine(double cash) {*/
+	
 	public VendingMachine() {
-
-		/*this.cash = cash;*/
 		stockState = new StockState(this);
 		depositState = new DepositState(this);
 		outOfStockState = new OutOfStockState(this);

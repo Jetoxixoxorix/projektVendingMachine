@@ -12,11 +12,7 @@ public class Test {
     	int count = 0;
         VendingMachine vendingMachine = new VendingMachine();
         
-        
-      /*  vendingMachine.insertMoney();
-        vendingMachine.pickProduct();
-        vendingMachine.insertMoney();
-        */
+   
         finish:
         while(count >= 0){
         	System.out.println("What you are gonna do? (i - insert money, p - pick product, e - eject money, q - quit)");
