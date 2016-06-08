@@ -7,9 +7,10 @@ public class StockState implements State {
 	
 	VendingMachine vendingMachine;
 	
-	int zapasCola = 10;
-	int zapasBaton = 10;
-	int zapasGuma = 10;
+	int zapasCola = 3;
+	int zapasBaton = 3;
+	int zapasGuma = 3;
+	int zapas;
 	
 	public StockState(VendingMachine vendingMachine) {
 		this.vendingMachine = vendingMachine;
@@ -38,6 +39,9 @@ public class StockState implements State {
 	public int getZapasGuma(){
 		return zapasGuma;
 	}
+	
+
+	
 	
 	@Override
 	public void insertMoney() {
@@ -76,7 +80,6 @@ public class StockState implements State {
 				dispense();
 			} else {
 				System.out.println("Not enough money. Insert more money");
-				/*vendingMachine.setState(vendingMachine.getDepositState());*/
 				vendingMachine.insertMoney();
 			}
 		}
@@ -85,7 +88,6 @@ public class StockState implements State {
 				dispense();
 			} else {
 				System.out.println("Not enough money. Insert more money");
-				/*vendingMachine.setState(vendingMachine.getDepositState());*/
 				vendingMachine.insertMoney();
 			}
 		}
@@ -94,7 +96,6 @@ public class StockState implements State {
 				dispense();
 			} else {
 				System.out.println("Not enough money. Insert more money");
-				/*vendingMachine.setState(vendingMachine.getDepositState());*/
 				vendingMachine.insertMoney();
 			}
 		}
@@ -113,12 +114,13 @@ public class StockState implements State {
 					DepositState.allCash = DepositState.allCash - cola.getPrice();
 					System.out.println("Stock: " + cola.getQuantity());
 					System.out.println("Current balance: " + DepositState.allCash);
-					/*vendingMachine.setState(vendingMachine.getDepositState());*/
+					if (cola.getQuantity() + baton.getQuantity() + guma.getQuantity() == 0){
+						System.out.println("Mahine is out of stock!");
+						vendingMachine.setState(vendingMachine.getOutOfStockState());						
+					}
 				} else {
-					System.out.println("Out of stock. Pick other product");
-					vendingMachine.pickProduct();
-					/*vendingMachine.setState(vendingMachine.getDepositState());
-					vendingMachine.insertMoney();*/
+					System.out.println("Out of stock.");
+
 				}
 		}
 		else if (towar == 2) {
@@ -127,12 +129,12 @@ public class StockState implements State {
 					DepositState.allCash = DepositState.allCash - baton.getPrice();
 					System.out.println("Stock: " + baton.getQuantity());
 					System.out.println("Current balance: " + DepositState.allCash);
-					//vendingMachine.setState(vendingMachine.getDepositState());
+					if (cola.getQuantity() + baton.getQuantity() + guma.getQuantity() == 0){
+						System.out.println("Mahine is out of stock!");
+						vendingMachine.setState(vendingMachine.getOutOfStockState());						
+					}
 				} else {
-					System.out.println("Out of stock. Pick other product");
-					vendingMachine.pickProduct();
-					/*vendingMachine.setState(vendingMachine.getDepositState());
-					vendingMachine.insertMoney();*/
+					System.out.println("Out of stock.");
 				}
 		}
 		if (towar == 3) {
@@ -141,12 +143,12 @@ public class StockState implements State {
 					DepositState.allCash = DepositState.allCash - guma.getPrice();
 					System.out.println("Stock: " + guma.getQuantity());
 					System.out.println("Current balance: " + DepositState.allCash);
-					//vendingMachine.setState(vendingMachine.getDepositState());
+					if (cola.getQuantity() + baton.getQuantity() + guma.getQuantity() == 0){
+						System.out.println("Mahine is out of stock!");
+						vendingMachine.setState(vendingMachine.getOutOfStockState());						
+					}
 				} else {
-					System.out.println("Out of stock. Pick other product");
-					vendingMachine.pickProduct();
-					/*vendingMachine.setState(vendingMachine.getDepositState());
-					vendingMachine.insertMoney();*/
+					System.out.println("Out of stock.");;
 				}
 		}
 		
